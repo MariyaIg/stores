@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>New Store</title>
+</head>
+<body>
+<form th:method ="Insert" th:action="@{/stores}" th:object="${store}">
+    <div class="mb-3">
+    <label>Title of store</label><br/>
+    <input type = "text"th:field="*{title}"/><br/>
+    </div>
+    <div class="mb-3">
+    <label>Address</label><br/>
+    <input type = "text" th:field="*{address}"/><br/>
+    </div>
+    <div class="mb-3">
+    <label>Phone</label><br/>
+        <input type = "text" th:field="*{phone}"/><br/>
+    </div>
+    <div class="mb-3">
+        <label >Email address</label><br/>
+        <input type="email" class="form-control" th:field="*{email}"><br/>
+    </div>
+    <div class="mb-3">
+    <label>WebSite</label><br/>
+    <input type = "text" th:field="*{site}"/>
+    </div>
+    <div class="mb-3">
+        <label >Description</label><br/>
+        <input type = "text" th:field="*{description}"/><br/>
+    </div>
+    <div class="mb-3">
+    <label>Category</label><br/>
+        <input type = "number" th:field="*{categoryid}" /><br/>
+      <p>
+          1. food, 2. house, 3. sport, 4. pet
+      </p>
+        <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+            <option selected>Chose category</option>
+            <option value="1" th:field="*{categoryid}">Food</option>
+            <option value="2"th:field="*{categoryid}" >House</option>
+            <option value="3" th:field="*{categoryid}">Sport</option>
+            <option value="4"th:field="*{categoryid}">Pet</option>
+        </select>
+
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+</body>
+</html>

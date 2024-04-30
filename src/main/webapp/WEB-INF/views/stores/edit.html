@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT store</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/stores/{id}(id=${store.getId()})}" th:object="${store}">
+    <label for ="name">Title</label>
+    <input type = "text" id ="name" th:field="*{title}"/><br/>
+    <input type = "text" id ="address" th:field="*{address}"/><br/>
+    <input type = "text" id ="phone" th:field="*{phone}"/><br/>
+    <input type = "text" id ="email" th:field="*{email}"/><br/>
+    <input type = "text" id ="site" th:field="*{site}"/><br/>
+
+    <input type = "number" id ="categoryId" th:field="*{categoryid}"/><br/>
+    <input type = "text" id ="description" th:field="*{description}"/><br/>
+    <input type = "submit" value = "EDIT"/><br/>
+</form>
+
+
+<input type = "number" th:field="*{categoryid}"/>
+
+</body>
+</html>
